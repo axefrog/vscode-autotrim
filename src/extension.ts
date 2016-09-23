@@ -25,7 +25,9 @@ class LineTrimmer {
                 if(!line) return;
                 const text = line.isEmptyOrWhitespace ? '' :
                     line.text.replace(/[ \t]+$/, '');
-                editor.edit(ed => ed.replace(line.range, text));
+                if(line.text !== text) {
+                    editor.edit(ed => ed.replace(line.range, text));
+                }
             }
         });
         this._lines = lines;

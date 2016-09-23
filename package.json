@@ -2,7 +2,7 @@
     "name": "autotrim",
     "displayName": "AutoTrim",
     "description": "Automatically trims trailing whitespace when moving the cursor from one line to another",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "publisher": "NathanRidley",
     "repository": "https://github.com/axefrog/vscode-autotrim",
     "engines": {
