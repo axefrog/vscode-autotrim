@@ -22,7 +22,7 @@ class LineTrimmer {
         const previousLines = this._lines.get(doc);
         if(previousLines) {
             previousLines.forEach(lineNum => {
-                if(!lines.has(lineNum)) {
+                if(!lines.has(lineNum) && doc.lineCount > lineNum) {
                     const line = doc.lineAt(lineNum);
                     if(!line) return;
                     const text = line.isEmptyOrWhitespace ? '' :
