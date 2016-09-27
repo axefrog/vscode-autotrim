@@ -24,7 +24,12 @@ class LineTrimmer {
             previousLines.forEach(lineNum => {
                 if(!lines.has(lineNum) && doc.lineCount > lineNum) {
                     const line = doc.lineAt(lineNum);
-                    if(!line) return;
+                    if(!line) {
+                        return;
+                    }
+                    if(doc.languageId === 'markdown' && line.text.match(/[^ ]  $/)) {
+                        return;
+                    }
                     const text = line.isEmptyOrWhitespace ? '' :
                         line.text.replace(/[ \t]+$/, '');
                     if(line.text !== text) {
