@@ -33,7 +33,7 @@ class LineTrimmer {
                     const text = line.isEmptyOrWhitespace ? '' :
                         line.text.replace(/[ \t]+$/, '');
                     if(line.text !== text) {
-                        editor.edit(ed => ed.replace(line.range, text));
+                        editor.edit(ed => ed.replace(line.range, text), false);
                     }
                 }
             });
