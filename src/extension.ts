@@ -16,7 +16,7 @@ class LineTrimmer {
     }
 
     onChangeSelection(e: vscode.TextEditorSelectionChangeEvent) {
-        const editor = vscode.window.activeTextEditor;
+        const editor = e.textEditor;
         const doc = editor.document;
         const lines = new Set<number>(e.selections.map(sel => sel.active.line));
         const previousLines = this._lines.get(doc);
